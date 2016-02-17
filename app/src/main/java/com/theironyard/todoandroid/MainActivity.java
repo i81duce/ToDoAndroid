@@ -19,19 +19,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) { // equivilent to main method
+    protected void onCreate(Bundle savedInstanceState) { // equivalent to main method
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // activities are like ios panels
+        setContentView(R.layout.activity_main); // activities are like ios panels/screens
 
         list = (ListView) findViewById(R.id.listView); // same as FMXL
         text = (EditText) findViewById(R.id.editText); // same as FMXL
         addButton = (Button) findViewById(R.id.button); // same as FMXL
 
-        items = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);// android.r are assests built into android
+        items = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);// android.r are assets built into android
         list.setAdapter(items);
 
         addButton.setOnClickListener(this); // go to appcompactactivity to add implements
-        list.setOnClickListener(this);
+        list.setOnItemLongClickListener(this);
     }
 
     @Override
